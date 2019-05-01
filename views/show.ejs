@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/main.css">    
+
+<nav>
+    <a href="/Companys">Back to list</a>
+</nav>
+
+<h1><%= company.name  %> Info</h1>
+
+  <img src="<%= company.logo %>" alt="logo" style="width:10%;" >
+ <p><%= company.address +"   " + company.city  %></p> 
+    <p><%= company.telephone %></p> 
+     <p>car info <%= company.cars   %></p> 
+    
+ <ul>
+  <% company.cars.forEach(car => { %>
+  <li>
+   <%# model
+     type
+     image
+      year
+      color %>
+   <%= car.model %>
+
+    </li>
+<% }) %>
+
+    <p>Drivers<%= company.drivers %></p> 
+
+  <% company.drivers.forEach(driver => { %>
+ 
+   <div class="card_holder">
+<div class="card">
+  <img src="<%= driver.image %>" alt="image" >
+  <div class="container">
+ 
+    <h4><b><%= driver.name %></b></h4> 
+    <p><%= driver.age %></p> 
+  </div>
+</div>
+<% }) %>

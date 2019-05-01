@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/main.css">    
+
+
+<h1>Companies Info</h1>
+
+<nav>
+    <a href="/companys/new">Add New Company</a>
+    <a href="/cars/new">Add New Car</a>
+    <a href="/cars/">Cars List</a>
+</nav>
+<div class="card_holder">
+<% for (i in companys){
+    console.log() %>
+
+<div class="card">
+  <img src="<%= companys[i].logo %>" alt="Avatar" >
+  <div class="container">
+ 
+    <h4><b><%= companys[i].name %></b></h4> 
+    <p><%= companys[i].address +"   " + companys[i].city  %></p> 
+    <p><%= companys[i].telephone %></p> 
+    <a href="/companys/<%= companys[i]._id %>"> More Info About <%= companys[i].name  %></a>
+  </div>
+</div>
+<% } %> 
